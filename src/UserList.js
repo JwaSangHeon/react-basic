@@ -1,4 +1,6 @@
-const User = ({user, onRemove, onToggle }) => {
+import React from "react";
+
+const User = React.memo(function User({user, onRemove, onToggle }){
   return (
     <div>
       <b
@@ -7,10 +9,10 @@ const User = ({user, onRemove, onToggle }) => {
           color: user.active ? 'green' : 'black'
         }}
         onClick={() => onToggle(user.id)}>{user.username}</b> <span>({user.email})</span>
-      <button onToggle={() => onRemove(user.id)}>삭제</button>
+      <button onClick={() => onRemove(user.id)}>삭제</button>
     </div>
   );
-}
+});
 
 const UserList = ({users, onRemove, onToggle}) =>{
   return(
@@ -23,4 +25,4 @@ const UserList = ({users, onRemove, onToggle}) =>{
 };
 
 
-export default UserList;
+export default React.memo(UserList);
