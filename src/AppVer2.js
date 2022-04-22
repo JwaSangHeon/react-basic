@@ -1,12 +1,7 @@
-import React, {
-  useRef,
-  useState,
-  useMemo,
-  useCallback,
-  useReducer,
-} from 'react';
+import React, { useRef, useMemo, useReducer } from 'react';
 import UserList from './UserList';
 import CreateUser from './CreateUser';
+import useInputs from './hooks/useInputs';
 
 function countActiveUsers(users) {
   console.log('활성 사용자 수를 세는중...');
@@ -14,10 +9,6 @@ function countActiveUsers(users) {
 }
 
 const initialState = {
-  inputs: {
-    username: '',
-    email: '',
-  },
   users: [
     {
       id: 1,
@@ -42,14 +33,6 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'CHANGE_INPUT':
-      return {
-        ...state,
-        inputs: {
-          ...state.inputs,
-          [action.name]: action.value,
-        },
-      };
     case 'CREATE_USER':
       return {
         ...state,
@@ -73,19 +56,13 @@ const reducer = (state, action) => {
 };
 
 function AppVer2() {
+  const [{ username, email }, onChange, reset] = useInputs({
+    username: '',
+    email: '',
+  });
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { users } = state;
-  const { username, email } = state.inputs;
-
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    dispatch({
-      type: 'CHANGE_INPUT',
-      name,
-      value,
-    });
-  };
 
   const nextId = useRef(4);
 
