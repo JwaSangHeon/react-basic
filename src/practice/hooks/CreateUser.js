@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { UserDispatch } from './AppVer2';
-import useInputs from './hooks/useInputs';
+import useInputs from './useInputs';
 
 function CreateUser({ username, email, onChange, onCreate }) {
   return (
