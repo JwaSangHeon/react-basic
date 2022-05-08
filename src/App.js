@@ -1,11 +1,14 @@
 import './App.css';
+import Counter from './Counter';
 import MyComponent from './MyComponent';
+import Say from './Say';
 
 const App = () => {
   return (
-    <MyComponent name="React" myFavoriteNumber={7}>
-      Hello
-    </MyComponent>
+    <>
+      <Counter />
+      <Say />
+    </>
   );
 };
 
