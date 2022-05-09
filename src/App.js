@@ -2,12 +2,14 @@ import './App.css';
 import Counter from './Counter';
 import MyComponent from './MyComponent';
 import Say from './Say';
+import EventPractice from './EventPractice';
 
 const App = () => {
   return (
     <>
-      <Counter />
-      <Say />
+      {/* <Counter /> */}
+      {/* <Say /> */}
+      <EventPractice />
     </>
   );
 };
