@@ -48,6 +48,7 @@ const EventPractice = () => {
   );
 };
 
+// 클래스 형
 // class EventPractice extends React.Component {
 //   constructor(props) {
 //     super(props);
