@@ -5,6 +5,7 @@ import MyComponent from './MyComponent';
 import Say from './Say';
 import EventPractice from './EventPractice';
 import ValidationSample from './ValidationSample';
+import ScrollBox from './ScrollBox';
 
 // const App = () => {
 //   return (
@@ -20,7 +21,15 @@ import ValidationSample from './ValidationSample';
 // class형 component
 class App extends Component {
   render() {
-    return <ValidationSample />;
+    return (
+      // <ValidationSample />
+      <>
+        <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+        <button onClick={() => this.scrollBox.scrollToBottom()}>
+          맨 밑으로
+        </button>
+      </>
+    );
   }
 }
 
