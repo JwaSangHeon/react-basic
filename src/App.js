@@ -7,6 +7,8 @@ import EventPractice from './EventPractice';
 import ValidationSample from './ValidationSample';
 import ScrollBox from './ScrollBox';
 import IterationSample from './IterationSample';
+import LifeCycleSample from './LifeCycleSample';
+import ErrorBoundary from './ErrorBoundary';
 
 // const App = () => {
 //   return (
@@ -19,8 +21,20 @@ import IterationSample from './IterationSample';
 //   );
 // };
 
+function getRandomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+
 // class형 component
 class App extends Component {
+  state = {
+    color: '#000000',
+  };
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor(),
+    });
+  };
   render() {
     return (
       // <ValidationSample />
@@ -29,7 +43,11 @@ class App extends Component {
         <button onClick={() => this.scrollBox.scrollToBottom()}>
           맨 밑으로
         </button> */}
-        <IterationSample />
+        {/* <IterationSample /> */}
+        <button onClick={this.handleClick}>랜덤색상</button>
+        <ErrorBoundary>
+          <LifeCycleSample color={this.state.color} />
+        </ErrorBoundary>
       </>
     );
   }
