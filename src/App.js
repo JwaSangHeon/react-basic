@@ -54,9 +54,9 @@ class App extends Component {
         </ErrorBoundary> */}
 
         {/* <Counter /> */}
-        {/* <Info /> */}
+        <Info />
 
-        <Average />
+        {/* <Average /> */}
       </>
     );
   }
