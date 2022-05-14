@@ -1,16 +1,17 @@
 import './App.css';
 import { Component } from 'react';
-import Counter from './6-day/Counter';
-import MyComponent from './1-day/MyComponent';
-import Say from './2-day/Say';
-import EventPractice from './3-day/EventPractice';
-import ValidationSample from './4-day/ValidationSample';
-import ScrollBox from './4-day/ScrollBox';
-import IterationSample from './5-day/IterationSample';
-import LifeCycleSample from './5-day/LifeCycleSample';
-import ErrorBoundary from './5-day/ErrorBoundary';
-import Info from './6-day/Info';
-import Average from './6-day/Average';
+// import Counter from './6-day/Counter';
+// import MyComponent from './1-day/MyComponent';
+// import Say from './2-day/Say';
+// import EventPractice from './3-day/EventPractice';
+// import ValidationSample from './4-day/ValidationSample';
+// import ScrollBox from './4-day/ScrollBox';
+// import IterationSample from './5-day/IterationSample';
+// import LifeCycleSample from './5-day/LifeCycleSample';
+// import ErrorBoundary from './5-day/ErrorBoundary';
+// import Info from './6-day/Info';
+// import Average from './6-day/Average';
+import SassComponent from './7-day-styling/SassComponent';
 
 // const App = () => {
 //   return (
@@ -54,9 +55,11 @@ class App extends Component {
         </ErrorBoundary> */}
 
         {/* <Counter /> */}
-        <Info />
+        {/* <Info /> */}
 
         {/* <Average /> */}
+
+        <SassComponent />
       </>
     );
   }
