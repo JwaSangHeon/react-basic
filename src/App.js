@@ -12,6 +12,7 @@ import { Component } from 'react';
 // import Info from './6-day/Info';
 // import Average from './6-day/Average';
 import SassComponent from './7-day-styling/SassComponent';
+import CSSModule from './7-day-styling/CSSModule';
 
 // const App = () => {
 //   return (
@@ -59,7 +60,9 @@ class App extends Component {
 
         {/* <Average /> */}
 
-        <SassComponent />
+        {/* <SassComponent /> */}
+
+        <CSSModule />
       </>
     );
   }
