@@ -11,8 +11,9 @@ import { Component } from 'react';
 // import ErrorBoundary from './5-day/ErrorBoundary';
 // import Info from './6-day/Info';
 // import Average from './6-day/Average';
-import SassComponent from './7-day-styling/SassComponent';
+// import SassComponent from './7-day-styling/SassComponent';
 import CSSModule from './7-day-styling/CSSModule';
+import StyledComponent from './7-day-styling/StyledComponent';
 
 // const App = () => {
 //   return (
@@ -62,7 +63,8 @@ class App extends Component {
 
         {/* <SassComponent /> */}
 
-        <CSSModule />
+        {/* <CSSModule /> */}
+        <StyledComponent />
       </>
     );
   }
