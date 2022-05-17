@@ -99,16 +99,24 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import About from './9-day-react-router/pages/About';
+import Articles from './9-day-react-router/pages/Articles';
 import Home from './9-day-react-router/pages/Home';
 import Profile from './9-day-react-router/pages/Profile';
+import Article from './9-day-react-router/pages/Article';
+import Layout from './9-day-react-router/Layout';
 
 const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/profiles/:username" element={<Profile />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/profiles/:username" element={<Profile />} />
+        </Route>
+        <Route path="/articles" element={<Articles />}>
+          <Route path=":id" element={<Article />} />
+        </Route>
       </Routes>
     </div>
   );
