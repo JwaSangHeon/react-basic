@@ -104,6 +104,9 @@ import Home from './9-day-react-router/pages/Home';
 import Profile from './9-day-react-router/pages/Profile';
 import Article from './9-day-react-router/pages/Article';
 import Layout from './9-day-react-router/Layout';
+import NotFound from './9-day-react-router/pages/NotFound';
+import Login from './9-day-react-router/pages/Login';
+import MyPage from './9-day-react-router/pages/MyPage';
 
 const App = () => {
   return (
@@ -113,10 +116,13 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/profiles/:username" element={<Profile />} />
+          <Route path="/articles" element={<Articles />}>
+            <Route path=":id" element={<Article />} />
+          </Route>
         </Route>
-        <Route path="/articles" element={<Articles />}>
-          <Route path=":id" element={<Article />} />
-        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/mypage" element={<MyPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
